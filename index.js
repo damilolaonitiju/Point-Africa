@@ -43,17 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let statDisplays = document.querySelectorAll(".num");
 
   statDisplays.forEach((statDisplay) => {
-    let endValue = parseInt(statDisplay.getAttribute("data-val"));
+    let endValue = parseFloat(statDisplay.getAttribute("data-val")); // Parse as float to handle different types
     let odometerInstance = new Odometer({
       el: statDisplay,
-      value: 0, // Initial value
+      value: 0,
       format: "(,ddd)", // Format for thousand separators
     });
 
     let interval = 5000;
     let duration = Math.floor(interval / endValue);
 
-    let startValue = 0; // Initialize startValue
+    let startValue = 0;
 
     let counter = setInterval(function () {
       odometerInstance.update(startValue);
