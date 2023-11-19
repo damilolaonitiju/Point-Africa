@@ -12,4 +12,8 @@ const heroSlider = new Swiper(".cc-home_slide", {
   },
 });
 
-//stat display section
+//cards animation section
+const timeline = gsap.timeline({ defaults: { duration: 1 } });
+timeline
+  .from(".goal-cards_wrapper", { y: "-100%", ease: "bounce" })
+  .from(".goal-card_label", { opacity: 0, delay: 1, stagger: 0.5 });
