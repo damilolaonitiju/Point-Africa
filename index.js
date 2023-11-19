@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let interval = 5000;
     let duration = Math.floor(interval / endValue);
 
+    let startValue = 0; // Initialize startValue
+
     let counter = setInterval(function () {
       odometerInstance.update(startValue);
       startValue += 1;
