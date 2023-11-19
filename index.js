@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let duration = Math.floor(interval / endValue);
     let counter = setInterval(function () {
       startValue += 1;
-      statDisplay.textContent = startValue;
+      statDisplay.innerHTML = startValue;
       if (startValue == endValue) {
         clearInterval(counter);
       }
