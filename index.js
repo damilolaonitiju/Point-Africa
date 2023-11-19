@@ -14,18 +14,38 @@ const heroSlider = new Swiper(".cc-home_slide", {
 
 //stat display section
 
-let statDisplays = document.querySelectorAll(".num");
-let interval = 5000;
+// let statDisplays = document.querySelectorAll(".num");
+// let interval = 5000;
 
-statDisplays.forEach((statDisplay) => {
-  let startValue = 0;
-  let endValue = parseInt(statDisplay.getAttribute("data-val"));
-  let duration = Math.floor(interval / endValue);
-  let counter = setInterval(function () {
-    startValue += 1;
-    statDisplay.textContent = startValue;
-    if (startValue == endValue) {
-      clearInterval(counter);
-    }
-  }, duration);
+// statDisplays.forEach((statDisplay) => {
+//   let startValue = 0;
+//   let endValue = parseInt(statDisplay.getAttribute("data-val"));
+//   let duration = Math.floor(interval / endValue);
+//   let counter = setInterval(function () {
+//     startValue += 1;
+//     statDisplay.textContent = startValue;
+//     if (startValue == endValue) {
+//       clearInterval(counter);
+//     }
+//   }, duration);
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+  let statDisplays = document.querySelectorAll(".num");
+  let interval = 5000;
+
+  statDisplays.forEach((statDisplay) => {
+    let startValue = 0;
+    let endValue = parseInt(statDisplay.getAttribute("data-val")) || 0;
+    let duration = Math.floor(interval / Math.max(1, endValue));
+    
+    let counter = setInterval(function () {
+      startValue += 1;
+      statDisplay.textContent = startValue;
+      if (startValue >= endValue) {
+        clearInterval(counter);
+      }
+    }, duration);
+  });
 });
+
