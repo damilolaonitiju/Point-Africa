@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (startValue == endValue) {
         clearInterval(counter);
       }
-    }, duration);
+    }, duration)
   });
 });
