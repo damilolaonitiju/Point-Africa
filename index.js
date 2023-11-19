@@ -13,21 +13,3 @@ const heroSlider = new Swiper(".cc-home_slide", {
 });
 
 //stat display section
-
-document.addEventListener("DOMContentLoaded", function () {
-  let statDisplays = document.querySelectorAll(".num");
-  let interval = 5000;
-
-  statDisplays.forEach((statDisplay) => {
-    let startValue = 0;
-    let endValue = parseInt(statDisplay.getAttribute("data-val"));
-    let duration = Math.floor(interval / endValue);
-    let counter = setInterval(function () {
-      startValue += 1;
-      statDisplay.textContent = startValue;
-      if (startValue == endValue) {
-        clearInterval(counter);
-      }
-    }, duration);
-  });
-});
