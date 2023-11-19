@@ -36,3 +36,7 @@ $("[data-lenis-toggle]").on("click", function () {
     lenis.start();
   }
 });
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
