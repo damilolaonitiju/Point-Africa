@@ -1,4 +1,12 @@
 // LENIS SMOOTH SCROLL
+document.addEventListener("DOMContentLoaded", function () {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("page-wrapper"),
+    smooth: true,
+    // Add other Locomotive Scroll options as needed
+  });
+});
+
 let lenis;
 if (Webflow.env("editor") === undefined) {
   lenis = new Lenis({
