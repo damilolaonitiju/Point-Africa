@@ -27,7 +27,7 @@ const heroSlider = new Swiper(".cc-home_slide", {
 //     if (startValue == endValue) {
 //       clearInterval(counter);
 //     }
-//   }, duration);
+//   }, duration)
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
