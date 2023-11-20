@@ -4,6 +4,21 @@ const heroSlider = new Swiper(".cc-home_slide", {
   autoplay: {
     delay: 3000,
   },
+  speed: 1500,
+
+              breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                [BREAKPOINT_WIDTH.extraSmall*16]: {
+                    slidesPerView: 3
+                },
+                [BREAKPOINT_WIDTH.medium*16]: {
+                    slidesPerView: 3
+                },
+                [BREAKPOINT_WIDTH.large*16]: {
+                    slidesPerView: 5
+                },
 
   // Navigation arrows
   navigation: {
@@ -12,8 +27,3 @@ const heroSlider = new Swiper(".cc-home_slide", {
   },
 });
 
-//cards animation section
-const timeline = gsap.timeline({ defaults: { duration: 1 } });
-timeline
-  .from(".goal-cards_wrapper", { y: "-100%", ease: "bounce" })
-  .from(".goal-card_label", { opacity: 0, delay: 1, stagger: 0.5 });
