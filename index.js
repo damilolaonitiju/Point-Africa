@@ -1,24 +1,8 @@
 const heroSlider = new Swiper(".cc-home_slide", {
   // Optional parameters
   loop: true,
-  autoplay: {
-    delay: 3000,
-  },
+  autoplay: true,
   speed: 1500,
-
-              breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                [BREAKPOINT_WIDTH.extraSmall*16]: {
-                    slidesPerView: 3
-                },
-                [BREAKPOINT_WIDTH.medium*16]: {
-                    slidesPerView: 3
-                },
-                [BREAKPOINT_WIDTH.large*16]: {
-                    slidesPerView: 5
-                },
 
   // Navigation arrows
   navigation: {
@@ -26,4 +10,3 @@ const heroSlider = new Swiper(".cc-home_slide", {
     prevEl: ".cc-arrow_back",
   },
 });
-
